@@ -36,11 +36,6 @@ http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit
 ## 第二步：调用Aliyun ECS API
 
 ```java
-		String apiKey = "你的consumer key";
-		String apiSecret = "你的secret key";
-		Fit2CloudClient client = new Fit2CloudClient(apiKey, apiSecret);
-		System.out.println("List clusters.....");
-		System.out.println(client.getClusters());
  		String ACCESS_KEY_ID = "你的阿里云API Access key";
     	String ACCESS_KEY_SECRET = "你的阿里云API Secret key";
         ECSClient client = new ECSClient(new AliyunCredentials(ACCESS_KEY_ID, ACCESS_KEY_SECRET));
@@ -70,7 +65,7 @@ http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit
 20. addDisk: 为虚机增加数据盘
 21. listDisks: 列出虚机的磁盘列表
 
-异常处理，每个API调用都会有两类异常：
+每个API调用都会有两类异常：
 
 1. AliyunClientException: 客戶端錯誤，比如网络问题
 2. AliyunServiceException: 服务器端错误，阿里云会返回错误代码和具体消息
