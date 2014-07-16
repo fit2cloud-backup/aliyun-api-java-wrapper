@@ -27,6 +27,33 @@ public class AuthorizeOrRevokeSecurityGroupRequest extends Request{
 		this.SourceCidrIp = cidr;
 		this.PortRange = fromPort + "/" + toPort;
 	}
+
+	public void buildCIDRAndIcmpRequest(String RegionId, String SecurityGroupId, String cidr){
+		this.RegionId = RegionId;
+		this.SecurityGroupId = SecurityGroupId;
+		this.IpProtocol = "ICMP";
+		this.NicType = "internet";
+		this.SourceCidrIp = cidr;
+		this.PortRange = "-1/-1";
+	}
+	
+	public void buildCIDRAndGreRequest(String RegionId, String SecurityGroupId, String cidr){
+		this.RegionId = RegionId;
+		this.SecurityGroupId = SecurityGroupId;
+		this.IpProtocol = "GRE";
+		this.NicType = "internet";
+		this.SourceCidrIp = cidr;
+		this.PortRange = "-1/-1";
+	}
+
+	public void buildCIDRAndAllProtocolRequest(String RegionId, String SecurityGroupId, String cidr){
+		this.RegionId = RegionId;
+		this.SecurityGroupId = SecurityGroupId;
+		this.IpProtocol = "ALL";
+		this.NicType = "internet";
+		this.SourceCidrIp = cidr;
+		this.PortRange = "-1/-1";
+	}
 	
 	@Override
 	public String toString() {
@@ -37,3 +64,4 @@ public class AuthorizeOrRevokeSecurityGroupRequest extends Request{
 				+ ", Policy=" + Policy + ", NicType=" + NicType + "]";
 	}
 }
+
