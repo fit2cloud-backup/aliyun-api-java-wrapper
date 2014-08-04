@@ -69,3 +69,5 @@ http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit
 
 1. AliyunClientException: 客戶端錯誤，比如网络问题
 2. AliyunServiceException: 服务器端错误，阿里云会返回错误代码和具体消息
+
+目前支持的ECS API版本为: API 版本 2013-01-10
