@@ -37,14 +37,14 @@ Beanstalk、Rightscale、Scalr等，但是在阿里云生态圈中目前没有�
 <dependency>
   <groupId>com.fit2cloud</groupId>
   <artifactId>aliyun-api-java-wrapper</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
 ### 方法2：直接下载Jar包
 
 下载地址是：
-http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit2cloud/aliyun-api-java-wrapper/1.0/aliyun-api-java-wrapper-1.0-jar-with-dependencies.jar
+http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit2cloud/aliyun-api-java-wrapper/1.1/aliyun-api-java-wrapper-1.1-jar-with-dependencies.jar
 
 ## 第二步：调用Aliyun ECS API
 
@@ -56,31 +56,48 @@ http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit
 ```
 目前仅封装了ECS相关API，包括
 
-1. listRegions: 获取数据中心列表
-2. listZones: 获取Zone列表
-3. listImages: 获取镜像列表
-4. listSecurityGroups: 获取安全组列表
-5. createSecurityGroup: 创建安全组
-6. authorizeSecurityGroup: 为完全组添加规则
-7. revokeSecurityGroup: 取消规则
-8. listSecurityPermissions: 列出安全组的规则
-9. deleteSecurityGroup: 删除安全组
-10. joinSecurityGroup: 将虚机加入安全组
-11. listInstanceType: 列出虚机类型
-12. createInstance: 创建虚机
-13. getInstance: 获取虚机详细信息
-14. listInstances: 获取虚机列表
-15. startInstance: 启动虚机
-16. allocatePublicIp: 为虚机分配公有IP
-17. rebootInstance: 重启虚机
-18. stopInstance: 停止虚机
-19. deleteInstance: 删除虚机
-20. addDisk: 为虚机增加数据盘
-21. listDisks: 列出虚机的磁盘列表
+1. allocatePublicIp: 为虚机分配公有IP
+2. attachDisk: 为虚机添加独立云磁盘
+3. authorizeSecurityGroup: 为安全组添加规则
+4. createDisk: 创建独立云磁盘
+5. createImage: 创建镜像
+6. createInstance: 创建虚机
+7. createSecurityGroup: 创建安全组
+8. createSnapshot: 创建快照
+9. deleteDisk: 删除独立云磁盘
+10. deleteImage: 删除镜像
+11. deleteInstance: 删除虚机
+12. deleteSecurityGroup: 删除安全组
+13. deleteSnapshot: 删除快照
+14. detachDisk: 从虚机移除独立云磁盘
+15. getInstance: 获取虚机信息
+16. joinSecurityGroup: 将虚机加入安全组
+17. leaveSecurityGroup: 将虚机移除出安全组
+18. listAutoSnapshotPolicy: 获取自动快照策略
+19. listDisks: 获取磁盘列表
+20. listImages: 获取镜像列表
+21. listInstanceMonitorData: 获取指定监控数据
+22. listInstances: 获取虚机列表
+23. listInstanceType: 获取虚机类型列表
+24. listRegions: 获取数据中心列表
+25. listSecurityGroups: 获取安全组列表
+26. listSecurityPermissions: 获取安全组规则列表
+27. listSnapshots: 获取快照列表
+28. listZones: 获取可用区列表
+29. modifyAutoSnapshotPolicy: 修改自动快照策略
+30. modifyDiskAttribute: 修改独立云磁盘参数
+31. modifyInstanceAttribute: 修改虚机参数
+32. rebootInstance: 重启虚机
+33. reInitDisk: 重新初始化磁盘
+34. replaceSystemDisk: 替换系统盘
+35. resetDisk: 使用指定磁盘自身的快照回滚磁盘内容
+36. revokeSecurityGroup: 取消安全组规则
+37. startInstance: 启动虚机
+38. stopInstance: 暂停虚机
 
 每个API调用都会有两类异常：
 
 1. AliyunClientException: 客戶端錯誤，比如网络问题
 2. AliyunServiceException: 服务器端错误，阿里云会返回错误代码和具体消息
 
-目前支持的ECS API版本为: API 版本 2013-01-10
+目前支持的ECS API版本为: API 版本 2014-05-26
