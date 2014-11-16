@@ -8,7 +8,7 @@ Fit2Cloud是一个建立在IaaS之上的DevOps协作平台，帮助开发人员�
 在亚马逊(AWS)云生态圈中，AWS及其合作伙伴提供了多种应用部署和管理工具，比如CloudFormation、Opsworks、
 Beanstalk、Rightscale、Scalr等，但是在阿里云生态圈中目前没有这样的工具，可以说Fit2Cloud填补了这个空白。
 
-我们在开发[**Fit2Cloud for 阿里云**](http://aliyun.fit2cloud.com/)过程中，需要调用ECS API进行各种操作。 
+我们在开发[**FIT2CLOUD for 阿里云**](http://aliyun.fit2cloud.com/)过程中，需要调用ECS API进行各种操作。 
 我们的后端采用的是Java语言，所以我们使用java语言完整封装了ECS的API。
 我们相信云计算的使用哲学是通过API(或者基于API的第三方工具)来动态管理资源，
 因此我们决定将我们封装好的ECS API Java SDK开源出去。
