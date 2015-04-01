@@ -44,7 +44,7 @@ Beanstalk、Rightscale、Scalr等，但是在阿里云生态圈中目前没有�
 ### 方法2：直接下载Jar包
 
 下载地址是：
-http://repository.fit2cloud.com/service/local/repo_groups/public/content/com/fit2cloud/aliyun-api-java-wrapper/1.1/aliyun-api-java-wrapper-1.1-jar-with-dependencies.jar
+http://repository.fit2cloud.com/content/groups/public/com/fit2cloud/aliyun-api-java-wrapper/1.1/aliyun-api-java-wrapper-1.1-jar-with-dependencies.jar
 
 ## 第二步：调用Aliyun ECS API
 
