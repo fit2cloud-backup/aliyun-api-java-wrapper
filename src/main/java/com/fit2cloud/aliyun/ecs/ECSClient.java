@@ -31,6 +31,8 @@ import com.fit2cloud.aliyun.ecs.model.request.ListInstancesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSecurityGroupsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSecurityPermissionsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSnapshotsRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ListVRoutersRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ListVpcsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListZonesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyAutoSnapshotPolicyRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyDiskAttributeRequest;
@@ -56,6 +58,8 @@ import com.fit2cloud.aliyun.ecs.model.response.ListRegionsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSecurityGroupsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSecurityPermissionsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSnapshotsResponse;
+import com.fit2cloud.aliyun.ecs.model.response.ListVRoutersResponse;
+import com.fit2cloud.aliyun.ecs.model.response.ListVpcsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListZonesResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ReplaceSystemDiskResponse;
 import com.google.gson.Gson;
@@ -1145,6 +1149,27 @@ public class ECSClient
 				listInstanceMonitorDataRequest.toMap()),
 				ListInstanceMonitorDataResponse.class);
 	}
+	
+	
+	public ListVpcsResponse listVpcs(
+			final ListVpcsRequest listVpcsRequest)
+			throws AliyunClientException, AliyunServiceException {
+		return (ListVpcsResponse) listPageableData(listVpcsRequest,
+				"DescribeVpcs", ListVpcsResponse.class);
+	}
+	
+	public ListVRoutersResponse listVRouters(
+			final ListVRoutersRequest listVRoutersRequest)
+					throws AliyunClientException, AliyunServiceException {
+		return (ListVRoutersResponse) listPageableData(listVRoutersRequest,
+				"DescribeVRouters", ListVRoutersResponse.class);
+	}
+	
+	
+	
+	
+	
+	
 	
 	private <T extends PageableResponse> T listPageableData(
 			final PageableRequest pageableRequest, final String action, Class<T> responseClass)

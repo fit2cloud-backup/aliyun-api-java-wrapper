@@ -30,11 +30,14 @@ import com.fit2cloud.aliyun.ecs.model.request.DetachDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.GetInstanceRequest;
 import com.fit2cloud.aliyun.ecs.model.request.JoinOrLeaveSecurityGroupRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListDisksRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ListImagesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListInstanceMonitorDataRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListInstancesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSecurityGroupsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSecurityPermissionsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListSnapshotsRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ListVRoutersRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ListVpcsRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ListZonesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyAutoSnapshotPolicyRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyDiskAttributeRequest;
@@ -60,8 +63,11 @@ import com.fit2cloud.aliyun.ecs.model.response.ListRegionsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSecurityGroupsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSecurityPermissionsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListSnapshotsResponse;
+import com.fit2cloud.aliyun.ecs.model.response.ListVRoutersResponse;
+import com.fit2cloud.aliyun.ecs.model.response.ListVpcsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListZonesResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ReplaceSystemDiskResponse;
+import com.google.gson.Gson;
 
 public class AliyunECSClientTest {
 
@@ -69,7 +75,7 @@ public class AliyunECSClientTest {
 
 	@Before
 	public void setUp() throws Exception {
-		String ACCESS_KEY_ID = "YOUR_ACCESS_KEY";
+    	String ACCESS_KEY_ID = "YOUR_ACCESS_KEY";
     	String ACCESS_KEY_SECRET = "YOUR_SECRET_KEY";
     	client = new ECSClient(new AliyunCredentials(ACCESS_KEY_ID, ACCESS_KEY_SECRET));
 	}
@@ -126,9 +132,9 @@ public class AliyunECSClientTest {
 	@Test
 	public void testListImagesRequest() {
 		try {
-			ListSecurityGroupsRequest r = new ListSecurityGroupsRequest("cn-qingdao");
+			ListImagesRequest r = new ListImagesRequest("cn-qingdao");
 			r.setPageSize(2);
-			ListSecurityGroupsResponse response = client.listSecurityGroups(r);
+			ListImagesResponse response = client.listImages(r);
 			System.out.println("testListImagesRequest :: "+response);
 			Assert.assertTrue(response.getTotalCount() > 0);
 		} catch (Exception e) {
@@ -903,4 +909,29 @@ public class AliyunECSClientTest {
 		}
 	}
 
+	@Test
+	public void testListVpcs() {
+		try {
+			ListVpcsRequest request = new ListVpcsRequest("cn-beijing");
+			ListVpcsResponse response = client.listVpcs(request );
+			System.out.println("testListVpcs :: "+response);
+			Assert.assertTrue(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testListVRouters() {
+		try {
+			ListVRoutersRequest request = new ListVRoutersRequest("cn-beijing");
+			ListVRoutersResponse response = client.listVRouters(request );
+			System.out.println("testListVpcs :: "+response);
+			Assert.assertTrue(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
 }

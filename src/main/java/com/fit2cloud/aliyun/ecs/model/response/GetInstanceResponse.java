@@ -1,10 +1,12 @@
 package com.fit2cloud.aliyun.ecs.model.response;
 
 import com.fit2cloud.aliyun.Response;
+import com.fit2cloud.aliyun.ecs.model.EipAddressAssociateType;
 import com.fit2cloud.aliyun.ecs.model.InnerIpAddress;
 import com.fit2cloud.aliyun.ecs.model.OperationLocks;
 import com.fit2cloud.aliyun.ecs.model.PublicIpAddress;
 import com.fit2cloud.aliyun.ecs.model.SecurityGroupIds;
+import com.fit2cloud.aliyun.ecs.model.VpcAttributesType;
 
 public class GetInstanceResponse extends Response {
 	
@@ -29,6 +31,10 @@ public class GetInstanceResponse extends Response {
 	private String SerialNumber;
 	private String VlanId;
 	private String ClusterId;
+	
+	private String InstanceNetworkType;
+	private VpcAttributesType VpcAttributes;
+	private EipAddressAssociateType EipAddress;
 	
 //	 * "InternetChargeType":"PayByTraffic",
 //	 * "CreationTime":"2014-08-07T06:40:35Z",
@@ -213,6 +219,30 @@ public class GetInstanceResponse extends Response {
 		ClusterId = clusterId;
 	}
 
+	public String getInstanceNetworkType() {
+		return InstanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		InstanceNetworkType = instanceNetworkType;
+	}
+
+	public VpcAttributesType getVpcAttributes() {
+		return VpcAttributes;
+	}
+
+	public void setVpcAttributes(VpcAttributesType vpcAttributes) {
+		VpcAttributes = vpcAttributes;
+	}
+
+	public EipAddressAssociateType getEipAddress() {
+		return EipAddress;
+	}
+
+	public void setEipAddress(EipAddressAssociateType eipAddress) {
+		EipAddress = eipAddress;
+	}
+
 	@Override
 	public String toString() {
 		return "GetInstanceResponse [InstanceId=" + InstanceId + ", ImageId="
@@ -227,6 +257,8 @@ public class GetInstanceResponse extends Response {
 				+ Description + ", InstanceName=" + InstanceName + ", ZoneId="
 				+ ZoneId + ", OperationLocks=" + OperationLocks
 				+ ", SerialNumber=" + SerialNumber + ", VlanId=" + VlanId
-				+ ", ClusterId=" + ClusterId + "]";
+				+ ", ClusterId=" + ClusterId + ", InstanceNetworkType="
+				+ InstanceNetworkType + ", VpcAttributes=" + VpcAttributes
+				+ ", EipAddress=" + EipAddress + "]";
 	}
 }
