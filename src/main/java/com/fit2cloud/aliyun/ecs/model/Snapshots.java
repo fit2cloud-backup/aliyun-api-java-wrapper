@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Snapshots {
-	private List<SnapshotResource> SnapshotResource = new ArrayList<SnapshotResource>();
+	private List<Snapshot> Snapshot = new ArrayList<Snapshot>();
 
-	public List<SnapshotResource> getSnapshotResource() {
-		return SnapshotResource;
+	public List<Snapshot> getSnapshotResource() {
+		return Snapshot;
 	}
 
-	public void setSnapshotResource(List<SnapshotResource> snapshotResource) {
-		SnapshotResource = snapshotResource;
+	public void setSnapshotResource(List<Snapshot> snapshotResource) {
+		Snapshot = snapshotResource;
 	}
 
-	public List<SnapshotResource> getList() {
-		return SnapshotResource;
+	public List<Snapshot> getList() {
+		return Snapshot;
 	}
 
 	@Override
 	public String toString() {
-		return "Snapshots [SnapshotResource=" + SnapshotResource + "]";
+		return "Snapshots [Snapshot=" + Snapshot + "]";
 	}
 }

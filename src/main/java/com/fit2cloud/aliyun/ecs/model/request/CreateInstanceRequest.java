@@ -16,6 +16,7 @@ public class CreateInstanceRequest extends Request {
 	private Instance instance;
 	private SystemDisk SystemDisk;
 	private List<DataDisk> DataDisks;
+	private String VSwitchId;
 
 	public CreateInstanceRequest(Instance instance) {
 		super();
@@ -44,6 +45,14 @@ public class CreateInstanceRequest extends Request {
 
 	public void setDataDisks(List<DataDisk> dataDisks) {
 		DataDisks = dataDisks;
+	}
+
+	public String getVSwitchId() {
+		return VSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		VSwitchId = vSwitchId;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -97,6 +106,7 @@ public class CreateInstanceRequest extends Request {
 	@Override
 	public String toString() {
 		return "CreateInstanceRequest [instance=" + instance + ", SystemDisk="
-				+ SystemDisk + ", DataDisks=" + DataDisks + "]";
+				+ SystemDisk + ", DataDisks=" + DataDisks + ", VSwitchId="
+				+ VSwitchId + "]";
 	}
 }

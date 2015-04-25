@@ -5,10 +5,10 @@ import com.fit2cloud.aliyun.Response;
 public class DescribeResourceUsageResponse extends Response {
 	private String DBInstanceId; 
 	private String Engine; 
-	private Integer DiskUsed; 
-	private Integer DataSize;
-	private Integer LogSize;
-	private Integer BackupSize;
+	private long DiskUsed; 
+	private long DataSize;
+	private long LogSize;
+	private long BackupSize;
 	public String getDBInstanceId() {
 		return DBInstanceId;
 	}
@@ -21,28 +21,28 @@ public class DescribeResourceUsageResponse extends Response {
 	public void setEngine(String engine) {
 		Engine = engine;
 	}
-	public Integer getDiskUsed() {
+	public long getDiskUsed() {
 		return DiskUsed;
 	}
-	public void setDiskUsed(Integer diskUsed) {
+	public void setDiskUsed(long diskUsed) {
 		DiskUsed = diskUsed;
 	}
-	public Integer getDataSize() {
+	public long getDataSize() {
 		return DataSize;
 	}
-	public void setDataSize(Integer dataSize) {
+	public void setDataSize(long dataSize) {
 		DataSize = dataSize;
 	}
-	public Integer getLogSize() {
+	public long getLogSize() {
 		return LogSize;
 	}
-	public void setLogSize(Integer logSize) {
+	public void setLogSize(long logSize) {
 		LogSize = logSize;
 	}
-	public Integer getBackupSize() {
+	public long getBackupSize() {
 		return BackupSize;
 	}
-	public void setBackupSize(Integer backupSize) {
+	public void setBackupSize(long backupSize) {
 		BackupSize = backupSize;
-	} 
+	}
 }

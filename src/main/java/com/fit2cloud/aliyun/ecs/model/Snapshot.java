@@ -1,6 +1,6 @@
 package com.fit2cloud.aliyun.ecs.model;
 
-public class SnapshotResource {
+public class Snapshot {
 	private String CreationTime;
 	private String Description;
 	private String SourceDiskId;
