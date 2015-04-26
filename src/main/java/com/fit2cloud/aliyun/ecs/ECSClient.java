@@ -21,6 +21,7 @@ import com.fit2cloud.aliyun.ecs.model.request.DeleteInstanceRequest;
 import com.fit2cloud.aliyun.ecs.model.request.DeleteOrReInitDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.DeleteSecurityGroupRequest;
 import com.fit2cloud.aliyun.ecs.model.request.DeleteSnapshotRequest;
+import com.fit2cloud.aliyun.ecs.model.request.DescribeInstancesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.DetachDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.GetInstanceRequest;
 import com.fit2cloud.aliyun.ecs.model.request.JoinOrLeaveSecurityGroupRequest;
@@ -47,6 +48,7 @@ import com.fit2cloud.aliyun.ecs.model.response.CreateImageResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateInstanceResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateSecurityGroupsResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateSnapshotResponse;
+import com.fit2cloud.aliyun.ecs.model.response.DescribeInstancesResponse;
 import com.fit2cloud.aliyun.ecs.model.response.GetInstanceResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListAutoSnapshotPolicyResponse;
 import com.fit2cloud.aliyun.ecs.model.response.ListDisksResponse;
@@ -472,6 +474,13 @@ public class ECSClient
 			throws AliyunClientException, AliyunServiceException {
 		return (ListInstancesResponse) listPageableData(listInstancesRequest,
 				"DescribeInstanceStatus", ListInstancesResponse.class);
+	}
+	
+	public DescribeInstancesResponse describeInstances(
+			final DescribeInstancesRequest describeInstancesRequest)
+					throws AliyunClientException, AliyunServiceException {
+		return (DescribeInstancesResponse) listPageableData(describeInstancesRequest,
+				"DescribeInstances", DescribeInstancesResponse.class);
 	}
 
 	/**
