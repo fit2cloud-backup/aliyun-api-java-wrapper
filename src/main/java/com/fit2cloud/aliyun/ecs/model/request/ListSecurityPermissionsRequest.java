@@ -5,6 +5,7 @@ import com.fit2cloud.aliyun.Request;
 public class ListSecurityPermissionsRequest extends Request {
 	private String RegionId;
 	private String SecurityGroupId;
+	private String NicType;
 
 	public ListSecurityPermissionsRequest(String regionId,
 			String securityGroupId) {
@@ -28,4 +29,11 @@ public class ListSecurityPermissionsRequest extends Request {
 		SecurityGroupId = securityGroupId;
 	}
 
+	public String getNicType() {
+		return NicType;
+	}
+
+	public void setNicType(String nicType) {
+		NicType = nicType;
+	}
 }

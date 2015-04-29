@@ -7,6 +7,7 @@ public class Permission {
 	private String Policy;
 	private String NicType;
 	private String SourceCidrIp;
+	private String SourceGroupOwnerAccount;
 
 	public String getIpProtocol() {
 		return IpProtocol;
@@ -56,12 +57,20 @@ public class Permission {
 		SourceCidrIp = sourceCidrIp;
 	}
 
+	public String getSourceGroupOwnerAccount() {
+		return SourceGroupOwnerAccount;
+	}
+
+	public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
+		SourceGroupOwnerAccount = sourceGroupOwnerAccount;
+	}
+	
 	@Override
 	public String toString() {
 		return "Permission [IpProtocol=" + IpProtocol + ", PortRange="
 				+ PortRange + ", SourceGroupId=" + SourceGroupId + ", Policy="
 				+ Policy + ", NicType=" + NicType + ", SourceCidrIp="
-				+ SourceCidrIp + "]";
+				+ SourceCidrIp + ", SourceGroupOwnerAccount="
+				+ SourceGroupOwnerAccount + "]";
 	}
-
 }

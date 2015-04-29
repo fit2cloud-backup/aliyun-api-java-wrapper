@@ -38,6 +38,7 @@ import com.fit2cloud.aliyun.ecs.model.request.ListZonesRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyAutoSnapshotPolicyRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyDiskAttributeRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ModifyInstanceAttributeRequest;
+import com.fit2cloud.aliyun.ecs.model.request.ModifySecurityGroupAttributeRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ReplaceSystemDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.ResetDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.StartInstanceRequest;
@@ -375,6 +376,12 @@ public class ECSClient
     	return gson.fromJson( request.execute("LeaveSecurityGroup",
     			joinOrLeaveSecurityGroupRequest.toMap()), Response.class);
     }
+    
+    public Response modifySecurityGroupAttribute(final ModifySecurityGroupAttributeRequest modifySecurityGroupAttributeRequest) throws AliyunClientException, AliyunServiceException {
+    	return gson.fromJson( request.execute("ModifySecurityGroupAttribute",
+    			modifySecurityGroupAttributeRequest.toMap()), Response.class);
+    }
+    
     
 	/**
 	 * 查询 ECS 所提供的实例资源规格列表。
