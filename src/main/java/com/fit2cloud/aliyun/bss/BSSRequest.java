@@ -10,7 +10,7 @@ import com.fit2cloud.aliyun.BaseModuleRequest;
 public class BSSRequest extends BaseModuleRequest {
 
     private static final String API_VERSION = "2014-07-14";
-	private static final String ENDPOINT = "https://bss.aliyuncs.com";
+	private static final String ENDPOINT = "https://bss.aliyuncs.com/";
 
 	public BSSRequest(AliyunCredentials credentials) {
         super(credentials, ENDPOINT, API_VERSION);

@@ -17,7 +17,7 @@ import com.google.gson.JsonSyntaxException;
 
 public class BSSClient 
 {
-    private static final String ISO8601_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+    private static final String ISO8601_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm'Z'";
     private Gson gson = new GsonBuilder().setDateFormat(ISO8601_DATE_FORMAT).create();
     
     private BSSRequest request;

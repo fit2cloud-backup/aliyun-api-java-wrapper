@@ -4,7 +4,6 @@ import com.fit2cloud.aliyun.PageableRequest;
 
 public class DescribeCouponListRequest extends PageableRequest {
 	
-	/*
 	private String Status = "Enable";
 
 	public String getStatus() {
@@ -14,7 +13,6 @@ public class DescribeCouponListRequest extends PageableRequest {
 	public void setStatus(String status) {
 		Status = status;
 	}
-	*/
 
 	public DescribeCouponListRequest() {
 	}

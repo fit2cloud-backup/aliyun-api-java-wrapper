@@ -11,4 +11,12 @@ public class DescribeCashDetailResponse {
 	public void setBalanceAmount(double balanceAmount) {
 		BalanceAmount = balanceAmount;
 	}
+
+	@Override
+	public String toString() {
+		return "DescribeCashDetailResponse [BalanceAmount=" + BalanceAmount
+				+ "]";
+	}
+	
+	
 }
