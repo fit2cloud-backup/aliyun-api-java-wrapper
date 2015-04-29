@@ -57,6 +57,70 @@ public class AuthorizeOrRevokeSecurityGroupRequest extends Request{
 		this.PortRange = "-1/-1";
 	}
 	
+	public String getSecurityGroupId() {
+		return SecurityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		SecurityGroupId = securityGroupId;
+	}
+
+	public String getRegionId() {
+		return RegionId;
+	}
+
+	public void setRegionId(String regionId) {
+		RegionId = regionId;
+	}
+
+	public String getIpProtocol() {
+		return IpProtocol;
+	}
+
+	public void setIpProtocol(String ipProtocol) {
+		IpProtocol = ipProtocol;
+	}
+
+	public String getPortRange() {
+		return PortRange;
+	}
+
+	public void setPortRange(String portRange) {
+		PortRange = portRange;
+	}
+
+	public String getSourceGroupId() {
+		return SourceGroupId;
+	}
+
+	public void setSourceGroupId(String sourceGroupId) {
+		SourceGroupId = sourceGroupId;
+	}
+
+	public String getSourceCidrIp() {
+		return SourceCidrIp;
+	}
+
+	public void setSourceCidrIp(String sourceCidrIp) {
+		SourceCidrIp = sourceCidrIp;
+	}
+
+	public String getPolicy() {
+		return Policy;
+	}
+
+	public void setPolicy(String policy) {
+		Policy = policy;
+	}
+
+	public String getNicType() {
+		return NicType;
+	}
+
+	public void setNicType(String nicType) {
+		NicType = nicType;
+	}
+
 	@Override
 	public String toString() {
 		return "AuthorizeSecurityGroupRequest [SecurityGroupId="
