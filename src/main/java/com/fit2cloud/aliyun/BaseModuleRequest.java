@@ -37,16 +37,16 @@ import com.google.gson.GsonBuilder;
 
 public class BaseModuleRequest {
 
-    private static final String ISO8601_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-    private static final String ENCODING = "UTF-8";
-    private static final String RESPONSE_FORMAT = "JSON";
-    private static final Gson gson = new GsonBuilder().setDateFormat(ISO8601_DATE_FORMAT).create();
+	protected static final String ISO8601_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+	protected static final String ENCODING = "UTF-8";
+	protected static final String RESPONSE_FORMAT = "JSON";
+	protected static final Gson gson = new GsonBuilder().setDateFormat(ISO8601_DATE_FORMAT).create();
     
-    private URI endpoint;
-    private String httpMethod = "GET";
-    private String apiVersion;
+    protected URI endpoint;
+    protected String httpMethod = "GET";
+    protected String apiVersion;
 
-    private AliyunCredentials credentials;
+    protected AliyunCredentials credentials;
 
     public BaseModuleRequest(AliyunCredentials credentials, String endpoint, String apiVersion) {
         this.credentials = credentials;
@@ -95,7 +95,7 @@ public class BaseModuleRequest {
         }
     }
 
-    private void addCommonParams(String action, Map<String, String> parameters) {
+    protected void addCommonParams(String action, Map<String, String> parameters) {
         parameters.put("Action", action);
         parameters.put("Version", apiVersion);
         parameters.put("AccessKeyId", credentials.getAccessKeyId());
@@ -105,9 +105,10 @@ public class BaseModuleRequest {
         parameters.put("SignatureNonce", UUID.randomUUID().toString()); 
         parameters.put("Format", RESPONSE_FORMAT);
         parameters.put("Signature", computeSignature(parameters));
+        
     }
 
-    private String computeSignature(Map<String, String> parameters)  {
+    protected String computeSignature(Map<String, String> parameters)  {
         String[] sortedKeys = parameters.keySet().toArray(new String[]{});
         Arrays.sort(sortedKeys);
         final String SEPARATOR = "&";
@@ -133,13 +134,13 @@ public class BaseModuleRequest {
         return signature;
     }
 
-    private String formatIso8601Date(Date date) {
+    protected String formatIso8601Date(Date date) {
         SimpleDateFormat df = new SimpleDateFormat(ISO8601_DATE_FORMAT);
         df.setTimeZone(new SimpleTimeZone(0, "GMT"));
         return df.format(date);
     }
 
-    private String calculateSignature(String key, String stringToSign){
+    protected String calculateSignature(String key, String stringToSign){
         final String ALGORITHM = "HmacSHA1";
         byte[] signData = null;
 		try {
