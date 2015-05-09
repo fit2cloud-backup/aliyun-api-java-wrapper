@@ -4,7 +4,7 @@
 	<groupId>com.fit2cloud</groupId>
 	<artifactId>aliyun-api-java-wrapper</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.2</version>
+	<version>1.4.3</version>
 	<name>Aliyun API Java封装库</name>
 
 	<licenses>

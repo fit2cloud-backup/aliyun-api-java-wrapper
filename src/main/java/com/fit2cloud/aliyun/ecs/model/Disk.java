@@ -22,7 +22,9 @@ public class Disk {
 	private String CreationTime;
 	private String AttachedTime;
 	private String DetachedTime;
-
+	
+	private String EnableAutoSnapshot;
+	
 	public String getDiskId() {
 		return DiskId;
 	}
@@ -191,6 +193,14 @@ public class Disk {
 		DetachedTime = detachedTime;
 	}
 
+	public String getEnableAutoSnapshot() {
+		return EnableAutoSnapshot;
+	}
+
+	public void setEnableAutoSnapshot(String enableAutoSnapshot) {
+		EnableAutoSnapshot = enableAutoSnapshot;
+	}
+
 	@Override
 	public String toString() {
 		return "Disk [DiskId=" + DiskId + ", RegionId=" + RegionId
@@ -204,7 +214,8 @@ public class Disk {
 				+ ", DeleteWithInstance=" + DeleteWithInstance
 				+ ", DeleteAutoSnapshot=" + DeleteAutoSnapshot
 				+ ", CreationTime=" + CreationTime + ", AttachedTime="
-				+ AttachedTime + ", DetachedTime=" + DetachedTime + "]";
+				+ AttachedTime + ", DetachedTime=" + DetachedTime
+				+ ", EnableAutoSnapshot=" + EnableAutoSnapshot + "]";
 	}
 
 }
