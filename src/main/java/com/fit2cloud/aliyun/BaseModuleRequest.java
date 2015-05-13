@@ -91,7 +91,6 @@ public class BaseModuleRequest {
             throw new AliyunClientException("Failed to connect to Aliyun:" + e.getMessage());
         } finally {
             safeClose(content);
-            connection.disconnect();
         }
     }
 
