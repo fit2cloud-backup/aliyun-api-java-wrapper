@@ -11,6 +11,7 @@ import com.fit2cloud.aliyun.Response;
 import com.fit2cloud.aliyun.ecs.model.request.AllocatePublicIpAddressRequest;
 import com.fit2cloud.aliyun.ecs.model.request.AttachDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.AuthorizeOrRevokeSecurityGroupRequest;
+import com.fit2cloud.aliyun.ecs.model.request.CopyImageRequest;
 import com.fit2cloud.aliyun.ecs.model.request.CreateDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.CreateImageRequest;
 import com.fit2cloud.aliyun.ecs.model.request.CreateInstanceRequest;
@@ -44,6 +45,7 @@ import com.fit2cloud.aliyun.ecs.model.request.ResetDiskRequest;
 import com.fit2cloud.aliyun.ecs.model.request.StartInstanceRequest;
 import com.fit2cloud.aliyun.ecs.model.request.StopOrRebootInstanceRequest;
 import com.fit2cloud.aliyun.ecs.model.response.AllocatePublicIpAddressResponse;
+import com.fit2cloud.aliyun.ecs.model.response.CopyImageResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateDiskResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateImageResponse;
 import com.fit2cloud.aliyun.ecs.model.response.CreateInstanceResponse;
@@ -1144,6 +1146,13 @@ public class ECSClient
 		return gson.fromJson(
 				request.execute("DeleteImage", deleteImageRequest.toMap()),
 				Response.class);
+	}
+	
+	public CopyImageResponse copyImage(final CopyImageRequest copyImageRequest)
+			throws AliyunClientException, AliyunServiceException {
+		return gson.fromJson(
+				request.execute("CopyImage", copyImageRequest.toMap()),
+				CopyImageResponse.class);
 	}
 	
 	/**
