@@ -70,6 +70,8 @@ public class BaseModuleRequest {
         	String query = paramsToQueryString(parameters);
         	URL url = new URL(endpoint.toString() + "?" + query);
         	connection = (HttpURLConnection)url.openConnection();
+        	connection.setConnectTimeout(5000);
+        	connection.setReadTimeout(5000);
         	connection.connect();
         	int code = connection.getResponseCode();
         	if (code>=400){
