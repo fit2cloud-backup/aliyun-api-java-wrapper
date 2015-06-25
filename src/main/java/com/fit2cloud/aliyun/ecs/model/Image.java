@@ -13,6 +13,8 @@ public class Image {
 	private String ProductCode;
 	private String IsSubscribed;
 	private String CreationTime;
+	private String Progress;
+	private String Status;
 
 	public String getImageId() {
 		return ImageId;
@@ -110,14 +112,54 @@ public class Image {
 		CreationTime = creationTime;
 	}
 
+	public String getProgress() {
+		return Progress;
+	}
+
+	public void setProgress(String progress) {
+		Progress = progress;
+	}
+
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		Status = status;
+	}
+
 	@Override
 	public String toString() {
-		return "Image [ImageId=" + ImageId + ", ImageVersion=" + ImageVersion
-				+ ", Architecture=" + Architecture + ", ImageName=" + ImageName
-				+ ", Description=" + Description + ", Size=" + Size
-				+ ", ImageOwnerAlias=" + ImageOwnerAlias + ", OSName=" + OSName
-				+ ", DiskDeviceMappings=" + DiskDeviceMappings
-				+ ", ProductCode=" + ProductCode + ", IsSubscribed="
-				+ IsSubscribed + ", CreationTime=" + CreationTime + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Image [ImageId=");
+		builder.append(ImageId);
+		builder.append(", ImageVersion=");
+		builder.append(ImageVersion);
+		builder.append(", Architecture=");
+		builder.append(Architecture);
+		builder.append(", ImageName=");
+		builder.append(ImageName);
+		builder.append(", Description=");
+		builder.append(Description);
+		builder.append(", Size=");
+		builder.append(Size);
+		builder.append(", ImageOwnerAlias=");
+		builder.append(ImageOwnerAlias);
+		builder.append(", OSName=");
+		builder.append(OSName);
+		builder.append(", DiskDeviceMappings=");
+		builder.append(DiskDeviceMappings);
+		builder.append(", ProductCode=");
+		builder.append(ProductCode);
+		builder.append(", IsSubscribed=");
+		builder.append(IsSubscribed);
+		builder.append(", CreationTime=");
+		builder.append(CreationTime);
+		builder.append(", Progress=");
+		builder.append(Progress);
+		builder.append(", Status=");
+		builder.append(Status);
+		builder.append("]");
+		return builder.toString();
 	}
 }
